@@ -1,0 +1,20 @@
+load("@rules_foreign_cc//foreign_cc:defs.bzl", "cmake")
+
+cmake(
+    name = "vtk",
+    lib_source = "@vtk//:all_srcs",
+    # to automatically get a multi-core build
+    generate_args = ["-GNinja", "--log-level=VERBOSE", "--debug-trycompile"],
+    cache_entries = {
+        "VTK_BUILD_TESTING": "OFF",
+    },
+    visibility = [ "//visibility:public" ],
+)
+
+cc_test(
+  name="test_vtk_setup",
+  srcs=["test_vtk_setup.cc"],
+  deps=[
+    "//third_party/vtk",
+  ],
+)

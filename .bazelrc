@@ -1,0 +1,4 @@
+common --enable_bzlmod
+
+# workaround for a Bazel 7 issue with rules_foreign_cc: https://github.com/bazelbuild/rules_foreign_cc/issues/1129
+build --sandbox_add_mount_pair=/tmp

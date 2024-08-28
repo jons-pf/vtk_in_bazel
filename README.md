@@ -20,4 +20,5 @@ This is a Bazel project used to try to build VTK in Bazel.
 
 Step 1 currently fails. The build log is provided in `build_log_so_far.log`.
 So far, I tracked down the error to the nested build process of HDF5.
-The concrete step that fails is located in line 610: `-- Detecting C maximum decimal precision for C`
+The concrete step that fails is located in [line 610](https://github.com/jons-pf/vtk_in_bazel/blob/main/build_log_so_far.log#L610):
+`-- Detecting C maximum decimal precision for C`
